@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.5cm, top=1cm]{geometry}
+\usepackage{amsmath, amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{listing}
+\usepackage{wrapfig}
+\usepackage{graphbox}
+
+\newcommand*{\figref}[2][]{%
+  \hyperref[{fig:#2}]{%
+    Figure~\ref*{fig:#2}%
+    \ifx\\#1\\%
+    \else
+      \,#1%
+    \fi
+  }%
+}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+ 
+        \textbf{Characterizing a Low Energy Electron Gun for use in Inverse Photoemission Spectroscopy}
+             
+        \vspace{1.5cm}
+ 
+        \textbf{Michael Bouliane}
+ 
+        \vfill
+             
+        A report submitted for partial fulfillment of the requirements of Phys 437B
+
+        Source files and full sized images available at: \url{https://github.com/m-bouliane/Phys-437B}
+             
+        \vspace{0.8cm}
+             
+        Department of Physics and Astronomy\\
+        University of Waterloo\\
+        \today\\
+             
+    \end{center}
+\end{titlepage}
+
+\begin{abstract}
+Inverse photoemission spectroscopy (IPES) provides a means to map the unoccupied electronic states of materials which are inaccessible to other techniques which map 
+occupied electronic states. The coupling of electrons in an emitted beam to these unoccupied states can release detectable photons through the process 
+of inverse photoemission. Unfortunately inverse photoemission spectrometers are not commercially available, and thus have to be built up from 
+scratch. In order to obtain quality IPES results, a spectrometer has strict requirements for its electron source, photodetectors, and sample quality. 
+This means that upon completing the construction of a spectrometer much work needs to be done to characterize its performance to ensure it is 
+capable of collecting good data. 
+
+Having previously focused on the photodetection capabilities of our spectrometer for Phys 437A, this report details our efforts to characterize our
+electron source. Inverse photoemission requires low energy electrons, in a well collimated beam with a high brightness and small spot size. Space 
+charge effects make this a very difficult task, which thankfully commercially available systems have solved for us. The task is to therefore find 
+the appropriate operating conditions of the electron source which meet the above requirements, yet another difficult task due to the large parameter space
+of the optimization problem.
+
+By measuring the beam width and brightness at a set of manufacturer recommended parameters, we found a beam which was unfit for IPES applications. 
+Space charge effects were found to be the limiting factor of this beam, so changes were made when exploring parameter space to minimize its impacts. 
+Eventually a beam with a spot size of $2.033\pm0.014$mm and divergence angle of $4.15\pm0.50^\circ$ was obtained. The momentum resolution of the beam 
+was then calculated to be $(1.07\pm0.13)\times10^9\mathrm{m}^{-1}$, an order of magnitude less than the size of copper's first brillouin zone. Our 
+efforts to produce a beam fit for inverse photoemission spectroscopy were an overwhelming success, agreeing strongly with the results published by 
+groups working with similar systems. 
+
+Finally an angle resolved inverse photoemission experiment was performed on Cu(111), which did not at all meet expectations. We determined that 
+this was due to sample quality and not the electron beam or photodetectors. Future tests on Cu(111) will be performed in an attempt to obtain results 
+which align with those reported in literature, giving us vital insight into our spectrometer's overall performance.
+    
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\listoffigures
+\listoftables
+
+\clearpage
+
+\pagenumbering{arabic}
+
+\input{Introduction.tex}
+\input{Experimental Design.tex}
+\input{Results.tex}
+\input{Discussion.tex}
+
+\bibliography{citations}
+\bibliographystyle{abbrv}
+
+\end{document}

@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.5cm, top=1cm]{geometry}
+\usepackage{amsmath, amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{listing}
+
+\newcommand*{\figref}[2][]{%
+  \hyperref[{fig:#2}]{%
+    Figure~\ref*{fig:#2}%
+    \ifx\\#1\\%
+    \else
+      \,#1%
+    \fi
+  }%
+}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+ 
+        \textbf{Characterization and Optimization of the Photodetection Capabilities of an Inverse Photoemission Spectrometer}
+             
+        \vspace{1.5cm}
+ 
+        \textbf{Michael Bouliane}
+ 
+        \vfill
+             
+        A report submitted for partial fulfillment of the requirements of Phys 437A
+
+        Source files and full sized images available at: \url{https://github.com/m-bouliane/Phys-437A}
+             
+        \vspace{0.8cm}
+             
+        Department of Physics and Astronomy\\
+        University of Waterloo\\
+        \today\\
+             
+    \end{center}
+\end{titlepage}
+
+\begin{abstract}
+    The photodetection capabilities of an inverse photoemission spectrometer (IPES) were examined and characterized. The IPES system used two gas filled bandpass Geiger-M\"uller tubes, 
+    one with a \ce{MgF_2} (left) entrance window and the other with a \ce{CaF_2} (right) window; both using acetone (act.) as a detection gas. Using LabVIEW, a custom macro was written to vary the applied
+    high voltage to the detectors' anodes over a specified range, record the number of detection events using an MCA with the IPES electron gun powered on, and then again with the 
+    gun off. The pressure of detection gas in each tube was varied and the scan was repeated for each new pressure value. Using this technique we examined how the tubes' performances
+    changed as a function of their anode voltage and pressure and used this information to find a region of high stability and count rate. For the right detector we found optimal 
+    performance at an acetone pressure of 3.7 torr and anode voltage of 750V, and 3.7 torr at 740V for the left detector. We also discovered several other regions of high counts below the tubes'
+    breakdown voltages, providing alternatives to the ones reported should the need arise. Finally we plotted the breakdown voltage of each tube as a function of gas pressure, and 
+    obtained results which qualitatively aligned with other reports in the literature. 
+\end{abstract}
+
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\listoffigures
+\listoftables
+
+\clearpage
+
+\pagenumbering{arabic}
+
+\input{Introduction.tex}
+\input{Experimental Design.tex}
+\input{Results.tex}
+\bibliography{citations}
+\bibliographystyle{apalike}
+
+\end{document}

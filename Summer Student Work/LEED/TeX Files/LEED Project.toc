@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{Preparing a Sample for LEED}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Step 1: Wet Cleaning}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Step 2: In-Situ Cleaning}{4}{0}{1}
+\beamer@sectionintoc {2}{Running LEED}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{Setting up LEED}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{Optimizing the Images}{7}{0}{2}
+\beamer@sectionintoc {3}{Results}{10}{0}{3}
+\beamer@subsectionintoc {3}{1}{Cu [100] Results}{10}{0}{3}
+\beamer@subsectionintoc {3}{2}{Cu [111] Results}{11}{0}{3}

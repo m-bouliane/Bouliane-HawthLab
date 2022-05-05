@@ -1,0 +1,64 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1572,         56]
+NotebookOptionsPosition[      1147,         40]
+NotebookOutlinePosition[      1491,         55]
+CellTagsIndexPosition[      1448,         52]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Data Loading", "Subsection",
+ CellChangeTimes->{{3.860781207568815*^9, 
+  3.8607812094932466`*^9}},ExpressionUUID->"aa309c7b-0556-425d-a913-\
+c737405bd1de"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"path", "=", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataPath", "=", 
+   RowBox[{"path", "<>", "\"\<\\\\Data\>\""}]}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.8607812128970118`*^9, 
+  3.8607812433978634`*^9}},ExpressionUUID->"ce28857e-800e-4ba3-ab73-\
+a659adc269dc"]
+}, Open  ]]
+},
+WindowSize->{1920, 1037},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 162, 3, 80, "Subsection",ExpressionUUID->"aa309c7b-0556-425d-a913-c737405bd1de"],
+Cell[745, 27, 386, 10, 102, "Input",ExpressionUUID->"ce28857e-800e-4ba3-ab73-a659adc269dc"]
+}, Open  ]]
+}
+]
+*)
+

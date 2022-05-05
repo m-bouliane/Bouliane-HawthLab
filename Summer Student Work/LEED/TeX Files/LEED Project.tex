@@ -1,0 +1,119 @@
+\documentclass[11pt]{beamer}
+
+\usetheme{Berkeley}
+\usecolortheme{spruce}
+
+\usepackage{bookmark}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath, amsfonts}
+\usepackage{mathtools}
+\usepackage[version=4]{mhchem}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+\author{Michael Bouliane}
+\title{Low Energy Electron Diffraction for use with Inverse Photoemission Spectroscopy}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Preparing a Sample for LEED}
+
+\subsection{Step 1: Wet Cleaning}
+
+\begin{frame}{Step 1: Wet Cleaning}
+    \begin{itemize}
+        \item Exposure to atmosphere allows for gases to react with or adsorb onto your sample which all greatly reduce surface quality
+        \item If the sample is chemically resistant enough then the first step should be ultrasonication with heating in an oxide removing solution for at least an hour, 
+        followed by a rinse with deionized water
+        \item Once this is finished, or if the previous step is skipped, then the next step is to remove as much water and oil based impurities using organic solvents. This should be done in the order of:
+        acetone, then ethanol, then methanol, and finally finishing with isopropanol
+    \end{itemize}
+\end{frame}
+
+\subsection{Step 2: In-Situ Cleaning}
+
+\begin{frame}{Step 2: In-Situ Cleaning}
+    \begin{itemize}
+        \item Start by transferring sample into prep chamber, then slowly heat to at least 250C overnight to allow for a thorough degassing, carefully monitoring the pressure
+        \item Next is Ar ion sputtering. Turn on controller and set beam to 1kV, and emission to 20. Turn on the main gas supply, open the swagelock valve, and finally slowly open the 
+        leak valve for a chamber pressure of roughly $1\times 10^{-6}$ torr, let run for a full day and monitor pressure  
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Once sputtering is completed, shut off gas and gun controller and let the chamber pressure return to baseline levels
+        \item To anneal the sample, increase the heater supply to 4.5-5A (this may need to be done slowly to allow for the sample to vent more gas at higher temperatures)
+        \item This should achieve a sample temperature in the range of 400 to 500C, once equilibrium is reached the sample should be left to anneal for at least a full day
+        \item A second cycle of sputtering and annealing (at least) should be started once the sample has completely cooled 
+    \end{itemize}
+\end{frame}
+
+\section{Running LEED}
+
+\subsection{Setting up LEED}
+\begin{frame}{Setting up LEED}
+    \begin{itemize}
+        \item After 2 cleaning cycles, transfer sample into main chamber and position in front of the LEED filament. Use the knob on the LEED mount to bring the electron gun close to the sample
+        \item Follow the manual instructions for the base settings of the apparatus, and either turn on the picoammeter or short the sample to ground. If the surface is clean enough, then a rough image should be
+        formed on the screen 
+        \item If there is nothing which resembles an images, check the picoammeter to see if it is registering a sample current, if it isn't attempt to realign the sample in front of the LEED filament. If the sample is
+        aligned, grounded, and close to the electron gun and there still isn't an image, run another full in-situ cleaning cycle and try again
+    \end{itemize}
+\end{frame}
+
+\subsection{Optimizing the Images}
+\begin{frame}{Optimizing the Images}
+    This can be done by changing gun and electron optics settings, the most relevant ones are:
+    \begin{itemize}
+        \item CAN: changes the brightness and sharpness of the image, manual recommends 3V but some samples can require more than 10V. Should only be changed if the image is too dim even at long exposures
+        \item FOCUS: changes where reflected electrons are focused onto the screen. This should be the first setting changed (look for positive and negative values that work) to obtain a good image
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item ENERGY: the kinetic energy of the incident electrons, changes the scattering angle of reflected electrons according to bragg's law; can help centre bragg peaks or give access to patterns of different 
+        symmetries
+    \end{itemize}
+    No other electron gun parameters should be changed (this includes FILAMENT, RETARD, and SCREEN), as they have little effect on the image quality\\
+    The camera can also be used to increase the quality of images obtained, this can be done using:
+        \begin{itemize}
+            \item Focus: the camera lens has a variable focus which can be changed to focus on the screen/gun if the image is looking blurry
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Exposure/analog gain: changing these will allow more light into the camera, which can help if your image is looking dim no matter what gun settings are used
+        \item Contrast/other colour settings: the toupview software allows for editing of many other image settings, and allows for reversion to default values which makes messing with these settings easy and risk free
+        \item Once you're happy with the images obtained, peak assignments can be made using the structure factor, the Weiss zone law, and vector addition; and the sample can finally be said to be of acceptable quality 
+        for an IPES experiment
+    \end{itemize}
+\end{frame}
+
+\section{Results}
+
+\subsection{Cu [100] Results}
+\begin{frame}{Cu [100] Results}
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.085]{C:/Users/micha/Desktop/LEED/Figs/LEED Images/Sample 2/Cu 100 LEED Pattern.png}
+        \caption{Cu [100] LEED pattern with normal beam incidence}
+    \end{figure}
+\end{frame}
+
+\subsection{Cu [111] Results}
+\begin{frame}{Cu [111] Results}
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.085]{C:/Users/micha/Desktop/LEED/Figs/LEED Images/Sample 1/Hex2.png}
+        \caption{Cu [111] LEED pattern with normal beam incidence}
+    \end{figure}
+\end{frame}
+
+\end{document}
