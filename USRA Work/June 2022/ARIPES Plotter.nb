@@ -1,0 +1,268 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9276,        260]
+NotebookOptionsPosition[      8712,        244]
+NotebookOutlinePosition[      9133,        260]
+CellTagsIndexPosition[      9090,        257]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"file", "=", 
+   RowBox[{"SystemDialogInput", "[", "\"\<FileOpen\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"filepath", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"StringReplace", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{
+        RowBox[{"StringExtract", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"\"\</\>\"", "->", 
+           RowBox[{"-", "1"}]}]}], "]"}], "->", "\"\<\>\""}]}], "]"}], "&"}], 
+    "[", "file", "]"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.8641220740800877`*^9, 3.8641221025285482`*^9}, {
+  3.8641221354873543`*^9, 3.8641221361014357`*^9}, {3.864122167805821*^9, 
+  3.864122271174768*^9}, {3.864123972962429*^9, 
+  3.86412397406136*^9}},ExpressionUUID->"8772eb39-2381-4ffb-b999-\
+4f78b0f52630"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"datafile", "=", 
+   RowBox[{"SemanticImport", "[", 
+    RowBox[{"file", ",", 
+     RowBox[{"ExcludedLines", "\[Rule]", 
+      RowBox[{"Range", "[", 
+       RowBox[{"1", ",", "6"}], "]"}]}], ",", 
+     RowBox[{"HeaderLines", "\[Rule]", "1"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"datafile", "=", 
+    RowBox[{"datafile", "[", 
+     RowBox[{"GroupBy", "[", "\"\<theta\>\"", "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gm1counts", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gm2counts", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"samplecurrent", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"thetas", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"energy", "=", 
+    RowBox[{"{", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "<=", 
+    RowBox[{
+     RowBox[{"Dimensions", "[", "datafile", "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+   RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"j", "=", "1"}], ",", 
+     RowBox[{"j", "<=", 
+      RowBox[{
+       RowBox[{"Dimensions", "[", 
+        RowBox[{"GroupBy", "[", 
+         RowBox[{
+          RowBox[{"datafile", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], ",", "\"\<en\>\""}], "]"}], "]"}], 
+       "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+     RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"gm1counts", ",", 
+        RowBox[{"Total", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"GroupBy", "[", 
+            RowBox[{
+             RowBox[{"datafile", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<en\>\""}], "]"}], "[", 
+           RowBox[{"[", "j", "]"}], "]"}], "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "\"\<gm1\>\""}], "]"}], "]"}], "]"}]}], "]"}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"gm2counts", ",", 
+        RowBox[{"Total", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"GroupBy", "[", 
+            RowBox[{
+             RowBox[{"datafile", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<en\>\""}], "]"}], "[", 
+           RowBox[{"[", "j", "]"}], "]"}], "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "\"\<gm2\>\""}], "]"}], "]"}], "]"}]}], "]"}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"thetas", ",", 
+        RowBox[{"Round", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"GroupBy", "[", 
+             RowBox[{
+              RowBox[{"datafile", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<en\>\""}], "]"}], 
+            "[", 
+            RowBox[{"[", "j", "]"}], "]"}], "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ",", "\"\<theta\>\""}], "]"}], "]"}], ",", "0.1"}], 
+         "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"energy", ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"GroupBy", "[", 
+           RowBox[{
+            RowBox[{"datafile", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<en\>\""}], "]"}], "[", 
+          
+          RowBox[{"[", "j", "]"}], "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", "\"\<en\>\""}], "]"}], "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"samplecurrent", ",", 
+        RowBox[{"Mean", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"10", "^", "6"}]}], "*", 
+          RowBox[{"Normal", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"GroupBy", "[", 
+              RowBox[{
+               RowBox[{"datafile", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<en\>\""}], "]"}], 
+             "[", 
+             RowBox[{"[", "j", "]"}], "]"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", "\"\<6487c\>\""}], "]"}], "]"}], "]"}]}], 
+         "]"}]}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdzE0ogwEAh/ElJqNZbJTNYeawmo3Gam1am0VZSa292WEkbc0Ow6wpF/kI
+JZpcpsVaxr5i6c1aK0pK1ntETXPB1By0tnBQU/bf4el3e/hTs3pLFY1G45aD
+B9rYooL61PTe7G5Ai2FgG6rEIi9kWlU+qLAxj+AjSxeCpqXqMBz0rZ5DW/Tk
+AtIJmUZZlh2QDUNdITsC/dchI0zU3ZohZfi1QsYYZYfEeLMDpgTzm7DHKHLD
+vQmfB7bUP/hh/vgnArmupyhkPV+SUMv6uIJtUk8WChaiucr/9O8LeopkbX/Z
+zHu8AXYW5jjwZW2aB00cJx/aix1dsNHhqigkkn2Q0a2Ww1R8awjGahI6WEpO
+jsKzVjoB2cLSDJS40isw95pfh+3OjBv61ZJDGFR+B2DTPRWBb1x5DEq9aRKG
+xTtxqOftZ+DdcrDiP47U3q4=
+  "],
+ CellLabel->
+  "In[500]:=",ExpressionUUID->"0b31dc5e-d8a6-4edc-99c4-722472213511"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"finaldata", "=", 
+   RowBox[{"GroupBy", "[", 
+    RowBox[{
+     RowBox[{"Dataset", "@", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"<|", 
+          RowBox[{
+           RowBox[{"\"\<theta\>\"", "->", "#1"}], ",", 
+           RowBox[{"\"\<en\>\"", "->", "#2"}], ",", 
+           RowBox[{"\"\<gm1\>\"", "->", "#3"}], ",", 
+           RowBox[{"\"\<gm2\>\"", "->", "#4"}], ",", 
+           RowBox[{"\"\<current\>\"", "->", "#5"}]}], "|>"}], " ", "&"}], ",",
+         " ", 
+        RowBox[{"{", 
+         RowBox[{
+         "thetas", ",", "energy", ",", "gm1counts", ",", "gm2counts", ",", 
+          "samplecurrent"}], "}"}]}], "]"}]}], ",", "\"\<theta\>\""}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"datarange", "=", 
+   RowBox[{"Range", "[", 
+    RowBox[{"1", ",", 
+     RowBox[{
+      RowBox[{"Dimensions", "[", "finaldata", "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Normal", "[", 
+        RowBox[{
+         RowBox[{"finaldata", "[", 
+          RowBox[{"[", "#", "]"}], "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "\"\<en\>\""}], "]"}], "]"}], "]"}], ",", 
+       RowBox[{"Normalize", "[", 
+        RowBox[{"Normal", "[", 
+         RowBox[{
+          RowBox[{"finaldata", "[", 
+           RowBox[{"[", "#", "]"}], "]"}], "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "\"\<gm1\>\""}], "]"}], "]"}], "]"}], "]"}]}], 
+      "}"}], "]"}], "&"}], "/@", "datarange"}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.8641270514150753`*^9, 3.864127174194018*^9}, {
+  3.86412727814636*^9, 3.86412728085804*^9}, {3.864127315620669*^9, 
+  3.864127374816414*^9}, {3.8641280983687773`*^9, 3.864128118810834*^9}, {
+  3.864128720003003*^9, 3.864128838826429*^9}, {3.8641289547726803`*^9, 
+  3.8641289779314737`*^9}, {3.86412904197746*^9, 3.8641290537841187`*^9}, {
+  3.86413620853421*^9, 3.864136210707348*^9}, {3.864136252094965*^9, 
+  3.864136260301161*^9}},
+ CellLabel->
+  "In[561]:=",ExpressionUUID->"ffc373dc-de51-4c5f-8ef5-9ae3b477bafe"]
+},
+WindowSize->{1706.6666666666667`, 934.2222222222222},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"13.0 for Linux x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"48ec0527-154b-4cd5-96d8-6b11a5cb6b2a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 816, 21, 88, "Input",ExpressionUUID->"8772eb39-2381-4ffb-b999-4f78b0f52630"],
+Cell[1377, 43, 5062, 139, 513, "Input",ExpressionUUID->"0b31dc5e-d8a6-4edc-99c4-722472213511"],
+Cell[6442, 184, 2266, 58, 155, "Input",ExpressionUUID->"ffc373dc-de51-4c5f-8ef5-9ae3b477bafe"]
+}
+]
+*)
+

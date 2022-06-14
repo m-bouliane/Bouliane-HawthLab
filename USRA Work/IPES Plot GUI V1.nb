@@ -1,0 +1,459 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20040,        451]
+NotebookOptionsPosition[     18583,        420]
+NotebookOutlinePosition[     19004,        436]
+CellTagsIndexPosition[     18961,        433]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"LoadData", "[", 
+    RowBox[{
+    "start_", ",", "stop_", ",", "inc_", ",", "range_", ",", "path_"}], "]"}],
+    ":=", "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Length", "[", 
+       RowBox[{"Evaluate", "[", 
+        RowBox[{"StringSplit", "[", 
+         RowBox[{"range", ",", "\"\<,\>\""}], "]"}], "]"}], "]"}], "=", "0"}],
+      ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"files", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"FileNames", "[", 
+          RowBox[{
+           RowBox[{"\"\<*Th=\>\"", "<>", "#", "<>", "\"\<*.dat\>\""}], ",", 
+           "path"}], "]"}], "&"}], "/@", 
+        RowBox[{"Evaluate", "[", 
+         RowBox[{"Range", "[", 
+          RowBox[{"start", ",", "stop", ",", "inc"}], "]"}], "]"}]}]}], ";"}],
+      ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"files", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"FileNames", "[", 
+          RowBox[{
+           RowBox[{"\"\<*Th=\>\"", "<>", "#", "<>", "\"\<*.dat\>\""}], ",", 
+           "path"}], "]"}], "&"}], "/@", 
+        RowBox[{"Evaluate", "[", 
+         RowBox[{"StringSplit", "[", 
+          RowBox[{"range", ",", "\"\<,\>\""}], "]"}], "]"}]}]}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"FileNames", "[", 
+      RowBox[{
+       RowBox[{"\"\<*Th=\>\"", "<>", "#", "<>", "\"\<*.dat\>\""}], ",", 
+       "path"}], "]"}], "&"}], "/@", 
+    RowBox[{"Evaluate", "[", 
+     RowBox[{"Range", "[", 
+      RowBox[{"start", ",", "stop", ",", "inc"}], "]"}], "]"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Import", "[", "#", "]"}], "&"}], "/@", "files"}]}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.863798696609951*^9, 3.863798791825747*^9}, {
+   3.86379918614133*^9, 3.863799342489106*^9}, {3.8637993743902903`*^9, 
+   3.8637994326472263`*^9}, {3.863799478904916*^9, 3.8637995604825907`*^9}, {
+   3.8637996464051*^9, 3.863799648730658*^9}, {3.8637998359582043`*^9, 
+   3.863799841138566*^9}, 3.863799873215967*^9, {3.863799936094009*^9, 
+   3.8637999372528973`*^9}, {3.863811128640292*^9, 3.863811191959229*^9}, {
+   3.863811457081472*^9, 3.8638114600433207`*^9}, {3.863811670716673*^9, 
+   3.863811671861562*^9}, {3.8638122861077414`*^9, 3.863812313364938*^9}, {
+   3.863812351165135*^9, 3.863812376092661*^9}, {3.863812724016564*^9, 
+   3.8638127323719807`*^9}, {3.8638127692750196`*^9, 
+   3.8638127742504673`*^9}, {3.863812845170145*^9, 3.863812846324339*^9}, {
+   3.863812938918025*^9, 3.86381293999785*^9}, {3.863813060397273*^9, 
+   3.863813106838973*^9}, {3.863813155793355*^9, 3.863813312415485*^9}, {
+   3.863813415275279*^9, 3.863813415531487*^9}, {3.863813535885542*^9, 
+   3.8638136451932297`*^9}, {3.863813677338623*^9, 3.863813758657222*^9}, {
+   3.863813830602886*^9, 3.863813856908413*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"c2dfebe7-8433-45be-be9e-872d0a1809b9"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Range", "range", 
+   "\"Range specification in \\!\\(\\*RowBox[{\\\"Range\\\", \\\"[\\\", \
+RowBox[{\\\"start\\\", \\\",\\\", \\\"stop\\\", \\\",\\\", \\\"inc\\\"}], \
+\\\"]\\\"}]\\) does not have appropriate bounds.\"", 2, 2, 1, 
+   29024160097723066701, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.863813835052444*^9, 3.8638138859642363`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"aec672ea-8942-4d2f-b424-20cde4649b54"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringJoin", "string", 
+   "\"String expected at position \\!\\(\\*RowBox[{\\\"2\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"*Th=\\\\\\\"\\\", \\\"<>\\\", \\\"start\\\", \
+\\\"<>\\\", \\\"\\\\\\\"*.dat\\\\\\\"\\\"}]\\).\"", 2, 2, 2, 
+   29024160097723066701, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.863813835052444*^9, 3.863813885987467*^9}},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"d3877a36-b800-4ebc-b163-cf54b516c5a7"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringJoin", "string", 
+   "\"String expected at position \\!\\(\\*RowBox[{\\\"2\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"\\\\\\\\\\\\\\\\*Th=\\\\\\\"\\\", \\\"<>\\\", \\\
+\"start\\\", \\\"<>\\\", \
+\\\"\\\\\\\"\\\\\\\\\\\\\\\\*\\\\\\\\\\\\\\\\.dat\\\\\\\"\\\"}]\\).\"", 2, 2, 
+   3, 29024160097723066701, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.863813835052444*^9, 3.863813885990625*^9}},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"83e07480-a8af-43ca-8148-1b825e143c12"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringJoin", "string", 
+   "\"String expected at position \\!\\(\\*RowBox[{\\\"2\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"\\\\\\\".*?Th=\\\\\\\"\\\", \\\"<>\\\", \\\"start\\\", \
+\\\"<>\\\", \\\"\\\\\\\".*?\\\\\\\\\\\\\\\\.dat\\\\\\\"\\\"}]\\).\"", 2, 2, 4,
+    29024160097723066701, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.863813835052444*^9, 3.863813885993434*^9}},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"6c645665-08e4-49ae-8e6a-b44d24269aac"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"StringJoin\\\", \
+\\\"::\\\", \\\"string\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"", 2, 2, 5, 29024160097723066701, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.863813835052444*^9, 3.863813885996274*^9}},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"bb28ef3b-a77b-4791-b1ff-8ce4b313d4db"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Print",
+ CellChangeTimes->{{3.8638138350818367`*^9, 3.8638138859994593`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"b512fd7a-9a4a-4079-916b-aca316819fae"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+   RowBox[{"Labeled", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"TabView", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<ARIPES\>\"", "->", 
+         RowBox[{"Grid", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"Button", "[", 
+              RowBox[{
+              "\"\<Select Data Directory\>\"", ",", "\[IndentingNewLine]", 
+               RowBox[{"filepath", "=", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"StringReplace", "[", 
+                   RowBox[{"#", ",", 
+                    RowBox[{
+                    RowBox[{"StringExtract", "[", 
+                    RowBox[{"#", ",", 
+                    RowBox[{"\"\</\>\"", "->", 
+                    RowBox[{"-", "1"}]}]}], "]"}], "->", "\"\<\>\""}]}], 
+                   "]"}], "&"}], "[", 
+                 RowBox[{"SystemDialogInput", "[", "\"\<FileOpen\>\"", "]"}], 
+                 "]"}]}], ",", 
+               RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}]}], "]"}], 
+             "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"TabView", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\"\<Angle Range\>\"", "->", 
+                 RowBox[{"Labeled", "[", 
+                  RowBox[{
+                   RowBox[{"Grid", "[", 
+                    RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Labeled", "[", 
+                    RowBox[{
+                    RowBox[{"InputField", "[", 
+                    RowBox[{
+                    RowBox[{"Dynamic", "[", "start", "]"}], ",", "Number", 
+                    ",", 
+                    RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "]"}], ",", 
+                    "\"\<Start\>\"", ",", "Bottom"}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Labeled", "[", 
+                    RowBox[{
+                    RowBox[{"InputField", "[", 
+                    RowBox[{
+                    RowBox[{"Dynamic", "[", "end", "]"}], ",", "Number", ",", 
+                    
+                    RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "]"}], ",", 
+                    "\"\<Stop\>\"", ",", "Bottom"}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Labeled", "[", 
+                    RowBox[{
+                    RowBox[{"InputField", "[", 
+                    RowBox[{
+                    RowBox[{"Dynamic", "[", "increment", "]"}], ",", "Number",
+                     ",", 
+                    RowBox[{"FieldSize", "\[Rule]", "Tiny"}]}], "]"}], ",", 
+                    "\"\<Increment\>\"", ",", "Bottom"}], "]"}]}], "}"}], 
+                    "}"}], "]"}], ",", "\[IndentingNewLine]", 
+                   "\"\<Enter Angle Range\>\"", ",", "Top"}], "]"}]}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"\"\<Angle Values\>\"", "->", 
+                 RowBox[{"Labeled", "[", "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"Labeled", "[", 
+                    RowBox[{
+                    RowBox[{"InputField", "[", 
+                    RowBox[{
+                    RowBox[{"Dynamic", "[", "anglerange", "]"}], ",", 
+                    "String"}], "]"}], ",", "\"\<Selected angles\>\"", ",", 
+                    "Bottom"}], "]"}], ",", 
+                   "\"\<Enter specific angles separated by ','\>\"", ",", 
+                   "Top"}], "]"}]}]}], "\[IndentingNewLine]", "}"}], "]"}], 
+             "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"Button", "[", 
+              RowBox[{"\"\<Load Data\>\"", ",", 
+               RowBox[{"LoadData", "[", 
+                RowBox[{
+                "start", ",", "end", ",", "increment", ",", "anglerange", ",",
+                  "filepath"}], "]"}]}], "]"}], "}"}]}], "}"}], "]"}]}], ",", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"\"\<Contact Potential\>\"", "->", 
+         RowBox[{"Button", "[", 
+          RowBox[{"\"\<Select Data Directory\>\"", ",", "\[IndentingNewLine]", 
+           RowBox[{"filepath", "=", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"StringReplace", "[", 
+               RowBox[{"#", ",", 
+                RowBox[{
+                 RowBox[{"StringExtract", "[", 
+                  RowBox[{"#", ",", 
+                   RowBox[{"\"\</\>\"", "->", 
+                    RowBox[{"-", "1"}]}]}], "]"}], "->", "\"\<\>\""}]}], 
+               "]"}], "&"}], "[", 
+             RowBox[{"SystemDialogInput", "[", "\"\<FileOpen\>\"", "]"}], 
+             "]"}]}], ",", 
+           RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}]}], "]"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"\"\<General Plotting\>\"", "->", 
+         RowBox[{"Button", "[", 
+          RowBox[{"\"\<Select Data Directory\>\"", ",", "\[IndentingNewLine]", 
+           RowBox[{"filepath", "=", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"StringReplace", "[", 
+               RowBox[{"#", ",", 
+                RowBox[{
+                 RowBox[{"StringExtract", "[", 
+                  RowBox[{"#", ",", 
+                   RowBox[{"\"\</\>\"", "->", 
+                    RowBox[{"-", "1"}]}]}], "]"}], "->", "\"\<\>\""}]}], 
+               "]"}], "&"}], "[", 
+             RowBox[{"SystemDialogInput", "[", "\"\<FileOpen\>\"", "]"}], 
+             "]"}]}], ",", 
+           RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}]}], "]"}]}]}], 
+       "}"}], "]"}], ",", "\"\<Select Experiment\>\"", ",", "Top"}], "]"}], 
+   "\[IndentingNewLine]", " ", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "]"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdzl1IUwEcBfDlFoxYi2mbjWCjEJU1iYZvimmxUbmkZBnR2GCxyg/mwLne
+InA1GwUq2ETXGvfWEJ2WJmwNVmNLQXAmLjY2pugoWLgM+7iQTOc99+Hw47z8
+/+eUobvVWMJisSrpwMO1IeXoYr5JYKhTwY109ApsGJhQw1fsKi3MuF8wWiK6
+e1AjF9rgTEvzIAweZ4/AbS/fBQ9xpYwLlN0Du24tkTBpD45D3R1ikulE7zv4
+s63sA7RZ+0Jw5eLlRRjjPIsxu/6cTDL3peJ1eCE69x0aMuEtWLOW3IGy3Ndd
+ONqYLcJz5b/YY7QOVScH+s5ajsLqvRAfclV2Maxs80tgxee3MuhevS5nejav
+gP3+cBM8czWohF79vBrKH7M0kEyl9PD0keYeGLCJHkH/yv+nMOLIPoc1YcoJ
+SwVREsr2631wOLExzfwh+ubg+W/WAOT1r+9Am1hCwfET9U4X7W3HMuOnzR9j
+0D3/4DWcVhonoYmqmoIF78wsbJ/QvoeRu105GG80bsMnqY+/4fKXv//g6o03
+7S9p0zcVHTBgvW+ChdlLZugg4x6C9uGxNAlHpJEE5FG5JBwiikKS9prZKoIH
+nQ1mUA==
+  "],
+ CellLabel->"In[4]:=",ExpressionUUID->"bec6a410-9337-41df-9ff8-f11693b2fa60"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {}, 
+    Typeset`size$$ = {476., {131., 160.5}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Labeled[
+        TabView[{"ARIPES" -> Grid[{{
+              Button[
+              "Select Data Directory", $CellContext`filepath = (
+                StringReplace[#, StringExtract[#, "/" -> -1] -> ""]& )[
+                 SystemDialogInput["FileOpen"]], Method -> "Queued"]}, {
+              TabView[{"Angle Range" -> Labeled[
+                  Grid[{{
+                    Labeled[
+                    InputField[
+                    Dynamic[$CellContext`start], Number, FieldSize -> Tiny], 
+                    "Start", Bottom], 
+                    Labeled[
+                    InputField[
+                    Dynamic[$CellContext`end], Number, FieldSize -> Tiny], 
+                    "Stop", Bottom], 
+                    Labeled[
+                    InputField[
+                    Dynamic[$CellContext`increment], Number, FieldSize -> 
+                    Tiny], "Increment", Bottom]}}], "Enter Angle Range", Top],
+                 "Angle Values" -> Labeled[
+                  Labeled[
+                   InputField[
+                    Dynamic[$CellContext`anglerange], String], 
+                   "Selected angles", Bottom], 
+                  "Enter specific angles separated by ','", Top]}]}, {
+              Button["Load Data", 
+               $CellContext`LoadData[$CellContext`start, $CellContext`end, \
+$CellContext`increment, $CellContext`anglerange, $CellContext`filepath]]}}], 
+          "Contact Potential" -> 
+          Button["Select Data Directory", $CellContext`filepath = (
+             StringReplace[#, StringExtract[#, "/" -> -1] -> ""]& )[
+              SystemDialogInput["FileOpen"]], Method -> "Queued"], 
+          "General Plotting" -> 
+          Button["Select Data Directory", $CellContext`filepath = (
+             StringReplace[#, StringExtract[#, "/" -> -1] -> ""]& )[
+              SystemDialogInput["FileOpen"]], Method -> "Queued"]}], 
+        "Select Experiment", Top], "Specifications" :> {}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{532., {178.97222222222223`, 186.02777777777777`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.863797605750605*^9, 3.863799022716816*^9, {3.863799054054296*^9, 
+   3.863799068740739*^9}, {3.863799135233437*^9, 3.863799145628751*^9}, 
+   3.863799195868906*^9, {3.86379971652216*^9, 3.8637997281046762`*^9}, 
+   3.863799904443267*^9, 3.8638005483727922`*^9, 3.863800658437913*^9, 
+   3.863800707559534*^9, 3.863811217218678*^9, 3.863811465535881*^9, {
+   3.863811784052307*^9, 3.86381179331546*^9}, 3.863811960942457*^9, 
+   3.8638123181046247`*^9, 3.863812381969776*^9, 3.8638127374267063`*^9, {
+   3.863812777696314*^9, 3.8638128032348127`*^9}, {3.863812851373897*^9, 
+   3.863812871716831*^9}, 3.8638130804914618`*^9, 3.863813112033757*^9, {
+   3.8638131581094627`*^9, 3.8638132351520653`*^9}, {3.863813273802277*^9, 
+   3.8638133158724737`*^9}, 3.863813417283243*^9, 3.86381359912309*^9, {
+   3.8638136473581533`*^9, 3.863813680969895*^9}, {3.863813762962749*^9, 
+   3.863813778610814*^9}, 3.863813886140029*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"b631e310-bedb-438d-ad27-561e43179171"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["data"], "Input",
+ CellChangeTimes->{{3.863799791369687*^9, 3.863799794002549*^9}, {
+   3.863799847179976*^9, 3.863799847761166*^9}, {3.863800016172051*^9, 
+   3.863800016645257*^9}, {3.863811653764944*^9, 3.863811653995228*^9}, 
+   3.863811700228868*^9, {3.863811778153532*^9, 3.863811780856254*^9}, {
+   3.863812398654364*^9, 3.8638124016626797`*^9}, {3.863812758368978*^9, 
+   3.8638127602188587`*^9}, {3.863812858254054*^9, 3.863812860036189*^9}, {
+   3.863813044653431*^9, 3.863813045468527*^9}, {3.863813380243936*^9, 
+   3.863813380699785*^9}, {3.863813601783971*^9, 3.8638136175331287`*^9}, {
+   3.863813797060001*^9, 3.863813797848606*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"e77a3866-0c2c-436f-b59b-3017606138b9"],
+
+Cell[BoxData["files"], "Output",
+ CellChangeTimes->{{3.8638136038600082`*^9, 3.8638136179850063`*^9}, {
+   3.863813765601376*^9, 3.86381379847266*^9}, 3.8638138737689133`*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"9e8e3ca7-2c1e-4118-9f3e-e06e24ef5a36"]
+}, Open  ]]
+},
+WindowSize->{1706.6666666666667`, 934.2222222222222},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"13.0 for Linux x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d4880bb1-ee33-480b-affe-42fcd0f30a12"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3114, 74, 211, "Input",ExpressionUUID->"c2dfebe7-8433-45be-be9e-872d0a1809b9",
+ InitializationCell->True],
+Cell[3697, 98, 510, 11, 35, "Message",ExpressionUUID->"aec672ea-8942-4d2f-b424-20cde4649b54"],
+Cell[4210, 111, 510, 11, 35, "Message",ExpressionUUID->"d3877a36-b800-4ebc-b163-cf54b516c5a7"],
+Cell[4723, 124, 560, 12, 35, "Message",ExpressionUUID->"83e07480-a8af-43ca-8148-1b825e143c12"],
+Cell[5286, 138, 530, 11, 35, "Message",ExpressionUUID->"6c645665-08e4-49ae-8e6a-b44d24269aac"],
+Cell[5819, 151, 478, 10, 35, "Message",ExpressionUUID->"bb28ef3b-a77b-4791-b1ff-8ce4b313d4db"],
+Cell[6300, 163, 218, 5, 28, "Print",ExpressionUUID->"b512fd7a-9a4a-4079-916b-aca316819fae"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6555, 173, 6736, 144, 676, "Input",ExpressionUUID->"bec6a410-9337-41df-9ff8-f11693b2fa60"],
+Cell[13294, 319, 4238, 78, 388, "Output",ExpressionUUID->"b631e310-bedb-438d-ad27-561e43179171"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17569, 402, 741, 10, 36, "Input",ExpressionUUID->"e77a3866-0c2c-436f-b59b-3017606138b9"],
+Cell[18313, 414, 254, 3, 41, "Output",ExpressionUUID->"9e8e3ca7-2c1e-4118-9f3e-e06e24ef5a36"]
+}, Open  ]]
+}
+]
+*)
+
